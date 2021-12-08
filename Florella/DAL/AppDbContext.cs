@@ -12,5 +12,10 @@ namespace Florella.DAL
 
         public DbSet<Section> Sections { get; set; }
         public DbSet<SectionImage> SectionImages { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Experts> Expert { get; set; }
+        public DbSet<ExpertTitle> ExpertTitles { get; set; }
+
     }
 }
