@@ -20,7 +20,7 @@ namespace Florella.Controllers
         {
             var section = _context.Sections.FirstOrDefault();
             var sectionImage = _context.SectionImages.FirstOrDefault();
-            var products = _context.Products.Include(p => p.Category).OrderBy(p => p.Id).ToList();
+            var products = _context.Products.Include(p => p.Category).OrderBy(p => p.Id).Take(20).ToList();
             var categories = _context.Categories.ToList();
             var experts = _context.Expert.ToList();
             var expertTitles = _context.ExpertTitles.First();

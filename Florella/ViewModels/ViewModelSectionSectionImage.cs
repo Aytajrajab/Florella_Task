@@ -11,5 +11,8 @@ namespace Florella.ViewModels
         public List<Product> products { get; set; }
         public ExpertTitle expertTitles { get; set; }
         public List<Experts> experts { get; set; }
+        public List<Say> says { get; set; }
+        public BlogTitle blogTitle { get; set; }
+        public List<BlogSection> blogSections { get; set; }
     }
 }

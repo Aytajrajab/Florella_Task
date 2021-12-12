@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Florella
 {
@@ -22,6 +23,8 @@ namespace Florella
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc().AddNewtonsoftJson(options=>options.SerializerSettings.ReferenceLoopHandling
+            =ReferenceLoopHandling.Ignore);
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(

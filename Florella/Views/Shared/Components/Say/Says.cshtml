@@ -1,0 +1,20 @@
+﻿@model List<Say>;
+@using Florella.ViewModels;
+
+@foreach (var say in Model)
+{
+    <div>
+                                <div class="item text-center">
+                                    <div class="img d-flex justify-content-center">
+                                        <img src="~/img/@say.Image" alt="">
+                                    </div>
+                                    <div class="text text-muted pt-3 pb-5">
+                                        <i>@say.Describtion</i>
+                                    </div>
+                                    <div class="author">
+                                        <h6>@say.Name</h6>
+                                        <p class="text-black-50">@say.Position</p>
+                                    </div>
+                                </div>
+                            </div>
+}

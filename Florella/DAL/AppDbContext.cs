@@ -16,6 +16,8 @@ namespace Florella.DAL
         public DbSet<Product> Products { get; set; }
         public DbSet<Experts> Expert { get; set; }
         public DbSet<ExpertTitle> ExpertTitles { get; set; }
-
+        public DbSet<Say> Says { get; set; }
+        public DbSet<BlogTitle> BlogTitles { get; set; }
+        public DbSet<BlogSection> BlogSections { get; set; }
     }
 }

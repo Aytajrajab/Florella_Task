@@ -1,0 +1,20 @@
+﻿@model List<BlogSection>
+@using Florella.ViewModels;
+
+@foreach (var blogItem in Model)
+{
+   <div class="col-md-6 col-lg-4">
+                        <div class="item">
+                            <div class="img position-relative">
+                                <img src="~/img/@blogItem.Image" class="img-fluid" alt="">
+                                <div class="date rounded bg-light position-absolute py-1 px-2">
+                                    <span>@blogItem.BlogSharedTime</span>
+                                </div>
+                            </div>
+                            <div class="text mt-3 text-center px-5">
+                                <h5>@blogItem.Title</h5>
+                                <p class="text-black-50">@blogItem.Description</p>
+                            </div>
+                        </div>
+                    </div> 
+}

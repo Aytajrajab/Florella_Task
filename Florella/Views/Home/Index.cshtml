@@ -46,7 +46,7 @@
                                 <i class="fas fa-caret-down"></i>
                                 <ul class="category list-unstyled" style="display: none;">
                                     <li><a href="" data-id="all">All</a></li>
-                                    @foreach (var category in viewSection.categories)
+                                    @foreach (var category in Model.categories)
                                 {
                                     <li><a href="" data-id="@category.Name.ToLower()">@category.Name</a></li>
                                 }
@@ -55,7 +55,7 @@
                         </ul>
                         <ul class="category d-none d-md-flex list-unstyled">
                             <li><a href="" data-id="all">All</a></li>
-                             @foreach (var category in viewSection.categories)
+                             @foreach (var category in Model.categories)
                         {
                             <li><a href="" data-id="@category.Name.ToLower()">@category.Name</a></li>
                         }
@@ -69,25 +69,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach (var product in viewSection.products)
-                   {
-                       <div class="col-sm-6 col-md-4 col-lg-3 mt-3">
-                        <div class="product-item text-center" data-id="@product.Category.Name.ToLower()">
-                            <div class="img">
-                                <a href="">
-                                    <img src="~/img/@product.Image" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="title mt-3">
-                                <h6>@product.Name</h6>
-                            </div>
-                            <div class="price">
-                                <span class="text-black-50">Add to cart</span>
-                                <span class="text-black-50">$@product.Price</span>
-                            </div>
-                        </div>
-                    </div>
-                   }
+                   @await Component.InvokeAsync("Product");
+                </div>
+                <div class="justify-content-center d-flex">
+                       <a class="btn btn-primary" asp-controller="Product" asp-action="Index"> View All Products</a>
                 </div>
             </div>
         </section>
@@ -192,59 +177,13 @@
                 <div class="row py-5">
                     <div class="offset-lg-3 col-lg-6">
                         <div class="section-title">
-                            <h1>From our Blog</h1>
-                            <p class="text-black-50">A perfect blend of creativity, energy, communication, happiness and
-                                love. Let us arrange
-                                a smile for you.</p>
+                            <h1>@viewSection.blogTitle.Title</h1>
+                            <p class="text-black-50">@viewSection.blogTitle.Description</p>
                         </div>
                     </div>
                 </div>
                 <div class="row pb-5">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="img position-relative">
-                                <img src="~/img/blog-feature-img-1.jpg" class="img-fluid" alt="">
-                                <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>29.12.2019</span>
-                                </div>
-                            </div>
-                            <div class="text mt-3 text-center px-5">
-                                <h5>Flower Power</h5>
-                                <p class="text-black-50">Class aptent taciti sociosqu ad litora torquent per conubia
-                                    nostra, per</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="img position-relative">
-                                <img src="~/img/blog-feature-img-3.jpg" class="img-fluid" alt="">
-                                <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>29.12.2019</span>
-                                </div>
-                            </div>
-                            <div class="text mt-3 text-center px-5">
-                                <h5>Local Florists</h5>
-                                <p class="text-black-50">Class aptent taciti sociosqu ad litora torquent per conubia
-                                    nostra, per</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="item">
-                            <div class="img position-relative">
-                                <img src="~/img/blog-feature-img-4.jpg" class="img-fluid" alt="">
-                                <div class="date rounded bg-light position-absolute py-1 px-2">
-                                    <span>29.12.2019</span>
-                                </div>
-                            </div>
-                            <div class="text mt-3 text-center px-5">
-                                <h5>Flower Beauty</h5>
-                                <p class="text-black-50">Class aptent taciti sociosqu ad litora torquent per conubia
-                                    nostra, per</p>
-                            </div>
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("BlogSection");
                 </div>
             </div>
         </section>
@@ -258,36 +197,7 @@
                 <div class="row py-5 justify-content-center">
                     <div class="col-md-8 col-xl-6">
                         <div class="owl-carousel say">
-                            <div>
-                                <div class="item text-center">
-                                    <div class="img d-flex justify-content-center">
-                                        <img src="~/img/testimonial-img-1.png" alt="">
-                                    </div>
-                                    <div class="text text-muted pt-3 pb-5">
-                                        <i>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus
-                                            lingua. </i>
-                                    </div>
-                                    <div class="author">
-                                        <h6>Anna Barnes</h6>
-                                        <p class="text-black-50">Florist</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="item text-center">
-                                    <div class="img d-flex justify-content-center">
-                                        <img src="~/img/testimonial-img-2.png" alt="">
-                                    </div>
-                                    <div class="text text-muted pt-3 pb-5">
-                                        <i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                            ligula eget. </i>
-                                    </div>
-                                    <div class="author">
-                                        <h6>Jasmine White</h6>
-                                        <p class="text-black-50">Florist</p>
-                                    </div>
-                                </div>
-                            </div>
+                            @await Component.InvokeAsync("Say");
                         </div>
                     </div>
                 </div>
