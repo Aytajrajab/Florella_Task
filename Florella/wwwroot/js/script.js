@@ -149,4 +149,18 @@ $(document).ready(function () {
             }
         });
     });
+
+
+    $(document).on("keyup", "#input-search", function () {
+        let searchedStr = $(this).val();
+
+        $.ajax({
+            type: "GET",
+            url: "Product/Search?searchedStr=" + searchedStr,
+            success: function (res) {
+                $("#search-cont li:not(:first-child)").remove();
+                $("#search-cont").append(res);
+            }
+        })
+    })
 });

@@ -14,5 +14,7 @@ namespace Florella.ViewModels
         public List<Say> says { get; set; }
         public BlogTitle blogTitle { get; set; }
         public List<BlogSection> blogSections { get; set; }
+        public List<Instagram> instagrams { get; set; }
+        public InstTitle instTitle { get; set; }
     }
 }

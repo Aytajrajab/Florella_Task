@@ -19,5 +19,7 @@ namespace Florella.DAL
         public DbSet<Say> Says { get; set; }
         public DbSet<BlogTitle> BlogTitles { get; set; }
         public DbSet<BlogSection> BlogSections { get; set; }
+        public DbSet<Instagram> Instagrams { get; set; }
+        public DbSet<InstTitle> instTitles { get; set; }
     }
 }

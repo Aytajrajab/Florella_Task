@@ -147,3 +147,4 @@ C:\Users\aytac\source\repos\Florella\Florella\obj\Debug\net5.0\Florella.dll
 C:\Users\aytac\source\repos\Florella\Florella\obj\Debug\net5.0\ref\Florella.dll
 C:\Users\aytac\source\repos\Florella\Florella\obj\Debug\net5.0\Florella.pdb
 C:\Users\aytac\source\repos\Florella\Florella\obj\Debug\net5.0\Florella.genruntimeconfig.cache
+C:\Users\aytac\source\repos\Florella\Florella\obj\Debug\net5.0\Razor\Views\Shared\_ProductSearchPartial.cshtml.g.cs

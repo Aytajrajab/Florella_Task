@@ -24,6 +24,8 @@ namespace Florella.Controllers
             var categories = _context.Categories.ToList();
             var experts = _context.Expert.ToList();
             var expertTitles = _context.ExpertTitles.First();
+            var instagrams = _context.Instagrams.ToList();
+            var instTitles = _context.instTitles.FirstOrDefault();
 
             ViewModelSectionSectionImage model = new ViewModelSectionSectionImage()
             {
@@ -32,7 +34,9 @@ namespace Florella.Controllers
                 products = products,
                 categories = categories,
                 expertTitles = expertTitles,
-                experts = experts
+                experts = experts,
+                instagrams = instagrams,
+                instTitle = instTitles,
             };
             return View(model);
 
