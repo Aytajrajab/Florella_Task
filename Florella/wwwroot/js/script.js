@@ -163,4 +163,31 @@ $(document).ready(function () {
             }
         })
     })
+
+    
+    $("#add-cart").on("click", function () {
+        const id = $(this).data("id");
+
+        $.ajax({
+            type: "GET",
+            url: `Basket/AddToBasket/${id}`,
+            success: async function (ref) {
+                await setCartCount();
+            }
+        })
+        await setCartCount();
+    })
 });
+
+async function getCartCount() {
+    return await $.ajax({
+        type: "GET",
+        url: "Basket/BasketCount",
+        success: function (ref) {
+            return ref;
+        }
+    })
+}
+async function setCartCount() {
+    $("#cart-count").text(await getBasketCount())
+}
